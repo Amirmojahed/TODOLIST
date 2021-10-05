@@ -1,31 +1,35 @@
 <template>
   <div class="main">
-   
-    <Addlist /> 
-      
+    <TaskList />
   </div>
 </template>
 
 <script>
-import Addlist from './components/Addlist.vue'
+import TaskList from "@/components/TaskList.vue";
 export default {
-  name: 'App',
-  components: {Addlist}
-  
-}
+  name: "App",
+  components: { TaskList },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Segoe print;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #152f70;
   margin-top: 60px;
 }
-
-.main{
+button,
+input {
+  font-family: Segoe print;
+}
+.main {
+  font-family: Segoe print;
   width: 80%;
   background-color: rgba(38, 0, 255, 0.144);
   margin: auto;
@@ -34,6 +38,4 @@ export default {
   border-radius: 20px 20px;
   padding: 20px;
 }
-
-
 </style>
