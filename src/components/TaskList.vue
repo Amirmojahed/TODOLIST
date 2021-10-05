@@ -106,6 +106,7 @@ h1.title {
   text-shadow: 1px 1px #31505f30;
   padding: 10px;
   border-radius: 10px;
+  user-select: none;
 }
 h1.title:hover {
   color: transparent;
