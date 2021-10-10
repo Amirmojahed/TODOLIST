@@ -33,30 +33,36 @@ export default {
   data() {
     return {
       filter: "viewAll",
-      items: [
-        { name: "Clean", status: true, check: false },
-        { name: "Bye Bitcoin", status: true, check: false },
-        { name: "Bye Doge", status: true, check: false },
+      tasks: [
+        { name: "Clean", check: false },
+        { name: "Bye Bitcoin",check: false },
+        { name: "Bye Doge", check: false },
       ],
     };
   },
-  watch: {
-    filter(val) {
-      switch (val) {
+   computed: {
+    items: {
+     get() {
+      this.tasks;
+      switch (this.filter) {
         case "viewAll":
-          return this.items.filter((item) => (item.status = true));
+          return this.tasks
 
         case "viewCompleted":
-          return this.items.filter((item) =>
-            item.check ? (item.status = true) : (item.status = false)
+          return this.tasks.filter((item) =>
+            item.check 
           );
 
         case "viewUncompleted":
-          return this.items.filter((item) =>
-            !item.check ? (item.status = true) : (item.status = false)
+        return this.tasks.filter((item) =>
+            item.check === false
           );
       }
-    },
+     },
+     set(val) {
+      return val
+     }
+    }
   },
 
   methods: {
@@ -64,9 +70,8 @@ export default {
       if (newItem === "") {
         alert("You must write something!");
       } else {
-        this.items.push({
+        this.tasks.push({
           name: newItem,
-          status: true,
           check: false,
         });
       }

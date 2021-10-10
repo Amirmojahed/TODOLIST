@@ -1,6 +1,6 @@
 <template>
   <div class="task">
-    <ul v-show="item.status">
+    <ul>
       <li @click="onCheckingTask(item)" :class="{ checked: item.check }">
         {{ item.name }}
       </li>
